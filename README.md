@@ -1,7 +1,7 @@
 # Repository Tracker
 
 - API to be used by the user is in app.py. 
-- Application logic is in tracker/tracker.py. 
+-Application logic is in tracker/tracker.py. 
 
 Added repositories are stored in JSON file in db/repository.json (or see config.toml).
 Each repository is stored under its ID (number used to update the repository) and contains owner name, repository name and ETag of last event fetch.
@@ -32,7 +32,7 @@ Statistics are counted from stored event data:
 
 1. Install requirements from requirements.in file.
 
-2. Setup confuguration in config.toml file. It should be usable as is, if token is not generated register, use your own client id and update configuration or generate your token and use tracker.update_headers(token='your token').
+2. Setup configuration in config.toml file. It should be usable as is, if token is not generated, use your own client id and update configuration or generate your token and use `tracker.update_headers(token='your token')` to pass it to application.
 
 3. Run the app:
 ```shell
