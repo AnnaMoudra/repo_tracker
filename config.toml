@@ -1,0 +1,11 @@
+[github]
+client_id = 'Ov23licykV8kZZxyEPCj'
+client_secret = 'b20c481302214eb74be2d3f887ded3436255788c'
+
+[database]
+repositories = 'db/repository.json'
+events = 'db/events.json'
+
+[settings]
+event_limit = 500
+window_length = 7
