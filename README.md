@@ -25,14 +25,14 @@ Statistics are counted from stored event data:
 
 #### Assumptions: 
 
-- User knows the owner and repository name they want to track. The repository exists and is public. Application is set up with client id and client secret to generate access token, otherwise user will update code to add access token to RepositoryTracker class headers. Application serves one client at a time.
+- User knows the owner and repository name they want to track. The repository exists and is public. Application is set up with client id and client secret to generate access token, otherwise user can update code to add access token to RepositoryTracker class headers. Application serves one client at a time.
 
 
 ## How to use
 
 1. Install requirements from requirements.in file.
 
-2. Setup configuration in config.toml file. It should be usable as is, if token is not generated, use your own client id and update configuration or generate your token and use `tracker.update_headers(token='your token')` to pass it to application.
+2. Setup configuration in config.toml file. It should be usable as is, if you need authentication token, use app client id in configuration or generate your token elsewhere and use `tracker.update_headers(token='your token')` to pass it to application.
 
 3. Run the app:
 ```shell
@@ -58,6 +58,10 @@ List statistics for all repositories:
 curl -X GET <ip-address:port>/
 ```
 
+Generate access token with app:
+```shell
+curl -X GET <ip-address:port>/login
+```
 
 ## Notes
 Due to the time limit I have not finished the solution fully and multiple parts should be improved.

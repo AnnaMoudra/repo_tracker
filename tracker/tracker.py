@@ -120,7 +120,6 @@ class RepositoryTracker:
             response = self._request_events_page(url, repo_header, page=1)
             if response.status_code == 200:
                 self.repositories[repo_id]['etag'] = response.headers['etag']
-                self._save_events_file()
 
                 fetch_more = self._store_events(repo_id, response.json())
                 page_count = 2
@@ -137,7 +136,7 @@ class RepositoryTracker:
                             next_link = None
                 
                     else:
-                        # TODO this should be handled but isnt :)
+                        # TODO this should be handled but isnt :) User may run into 403 code.
                         next_link = None
                         print(response.status_code)
                         print(response.json())
